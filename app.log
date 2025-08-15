@@ -1,0 +1,8 @@
+2025-08-15T15:22:01.150Z [[32minfo[39m]: Server running on port 5000
+2025-08-15T15:22:01.165Z [[32minfo[39m]: MongoDB connected
+2025-08-15T15:23:05.787Z [[32minfo[39m]: Server running on port 5000
+2025-08-15T15:23:05.803Z [[32minfo[39m]: MongoDB connected
+2025-08-15T15:23:13.131Z [[31merror[39m]: Error creating user:
+2025-08-15T15:23:13.135Z [[32minfo[39m]: ::1 - - [15/Aug/2025:15:23:13 +0000] "POST /api/users HTTP/1.1" 500 33 "-" "PostmanRuntime/7.43.4"
+2025-08-15T15:23:48.592Z [[32minfo[39m]: Created user: tipu@gmail.com
+2025-08-15T15:23:48.594Z [[32minfo[39m]: ::1 - - [15/Aug/2025:15:23:48 +0000] "POST /api/users HTTP/1.1" 201 83 "-" "PostmanRuntime/7.43.4"
