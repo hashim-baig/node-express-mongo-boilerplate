@@ -4,7 +4,10 @@ const morgan = require('morgan');
 const logger = require('./config/logger');
 require('dotenv').config();
 
-const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authRoutes');
+
+const auth = require('./middleware/authMiddleware');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -22,7 +25,13 @@ mongoose.connect(process.env.MONGO_URI)
     .catch(err => logger.error('MongoDB error:', err));
 
 // Routes
-app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
+
+// Example protected route
+app.get('/api/protected/test', auth, (req, res) => {
+    res.json({ message: `Welcome, ${req.user.name}` });
+});
+
 
 app.listen(PORT, () => {
     logger.info(`Server running on port ${PORT}`);
